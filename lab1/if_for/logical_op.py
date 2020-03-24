@@ -12,4 +12,4 @@ b = "hello"
 if b not in a:
     print("b is not in a")
 else: 
-    print("b is in a")
+    print("b is in a") 
