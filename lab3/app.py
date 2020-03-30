@@ -32,9 +32,9 @@ def insert_student():
         student = {"email": email, "name": name,  "yearOfBirth":yearOfBirth}
         # Add student to the 'students' collection
         students.insert_one(student)
-        return student["name"] + " was added to the MongoDB"
+        return {"name":student["name"], "msg":" was added to the MongoDB"}
     else:
-        return "A user with the given mail already exists"
+        return {"msg":"A user with the given mail already exists"}
 
 
 # Read Operations
