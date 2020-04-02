@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
-from flask import Flask, request, jsonify, redirect
+from flask import Flask, request, jsonify, redirect, Response
 import json
 
 # Connect to our local MongoDB
@@ -18,23 +18,23 @@ app = Flask(__name__)
 @app.route('/insertstudent', methods=['POST'])
 def insert_student():
     # Request JSON data
-    data = request.get_json()
-    if "name" in data:
-        name = data["name"]
-
-    if "yearOfBirth" in data:
-        yearOfBirth = data["yearOfBirth"]
-
-    if "email" in data:
-        email = data["email"]
+    data = None 
+    try:
+        data = json.loads(request.data)
+    except Exception as e:
+        return Response("bad json content",status=500,mimetype='application/json')
+    if data == None:
+        return Response("bad request",status=500,mimetype='application/json')
+    if not "name" in data or not "yearOfBirth" in data or not "email" in data:
+        return Response("Information incompleted",status=500,mimetype="application/json")
     
     if students.find({"email":data["email"]}).count() == 0 :
-        student = {"email": email, "name": name,  "yearOfBirth":yearOfBirth}
+        student = {"email": data['email'], "name": data['name'],  "yearOfBirth":data['yearOfBirth']}
         # Add student to the 'students' collection
         students.insert_one(student)
-        return {"name":student["name"], "msg":" was added to the MongoDB"}
+        return Response("was added to the MongoDB",status=200,mimetype='application/json') 
     else:
-        return {"msg":"A user with the given mail already exists"}
+        return Response("A user with the given email already exists",status=200,mimetype='application/json')
 
 
 # Read Operations
@@ -44,30 +44,37 @@ def get_all_students():
     iterable = students.find({})
     output = []
     for student in iterable:
-         output.append(student)
-    return str(output)
+        student['_id'] = None 
+        output.append(student)
+    return jsonify(output)
 
 # Find student by email
 @app.route('/getstudent/<string:email>', methods=['GET'])
 def get_student_by_email(email):
+    if email == None:
+        return Response("Bad request", status=500, mimetype='application/json')
     student = students.find_one({"email":email})
-    student = {'_id':student["_id"],
-            'name':student["name"],
-            'email':student["email"], 
-            'yearOfBirth':student["yearOfBirth"]}
-    return str(student)
+    if student !=None:
+        student = {'name':student["name"],'email':student["email"], 'yearOfBirth':student["yearOfBirth"]}
+        return jsonify(student)
+    return Response('no student found',status=500,mimetype='application/json')
     # return jsonify({"student":student})
 
 # Update Operation
 # Find student by email and update
 @app.route('/updatestudent/<string:email>', methods=['PUT'])
 def update_student(email):
-    student = students.find_one({"email":email})
-    update_data = request.get_json()
+    if email == None:
+        return Response({"Bad request"},status=500,mimetype="application/json")
+    student = students.find_one_and_update({"email":email},{'$inc':{'yearOfBirth': 1}})
+    return Response({'Entry changed successfuly'},status=200,mimetype='application/json')
     
 @app.route('/deletestudent/<string:email>', methods=['DELETE'])
 def delete_student(email):
-    pass
+    if email == None:
+        return Response("Bad request", status=500, mimetype='application/json')
+    students.delete_one({"email": email})
+    return Response("Student deleted successfuly", status=200, mimetype='application/json')
 
 # Run Flask App
 if __name__ == '__main__':
