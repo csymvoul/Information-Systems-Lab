@@ -60,22 +60,6 @@ def get_student_by_email(email):
     return Response('no student found',status=500,mimetype='application/json')
     # return jsonify({"student":student})
 
-# Update Operation
-# Find student by email and update
-@app.route('/updatestudent/<string:email>', methods=['PUT'])
-def update_student(email):
-    if email == None:
-        return Response({"Bad request"},status=500,mimetype="application/json")
-    student = students.find_one_and_update({"email":email},{'$inc':{'yearOfBirth': 1}})
-    return Response({'Entry changed successfuly'},status=200,mimetype='application/json')
-    
-@app.route('/deletestudent/<string:email>', methods=['DELETE'])
-def delete_student(email):
-    if email == None:
-        return Response("Bad request", status=500, mimetype='application/json')
-    students.delete_one({"email": email})
-    return Response("Student deleted successfuly", status=200, mimetype='application/json')
-
 # Run Flask App
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
