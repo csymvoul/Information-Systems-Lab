@@ -55,7 +55,7 @@ def get_student_by_email(email):
         return Response("Bad request", status=500, mimetype='application/json')
     student = students.find_one({"email":email})
     if student !=None:
-        student = {'name':student["name"],'email':student["email"], 'yearOfBirth':student["yearOfBirth"]}
+        student = {'_id':str(student["_id"]),'name':student["name"],'email':student["email"], 'yearOfBirth':student["yearOfBirth"]}
         return jsonify(student)
     return Response('no student found',status=500,mimetype='application/json')
     # return jsonify({"student":student})
