@@ -36,7 +36,6 @@ def insert_student():
     else:
         return Response("A user with the given email already exists",status=200,mimetype='application/json')
 
-
 # Read Operations
 # Get all students
 @app.route('/getallstudents', methods=['GET'])
