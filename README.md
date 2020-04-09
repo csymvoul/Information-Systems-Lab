@@ -12,5 +12,5 @@
 5. Εργαστήριο 5 - Containerization
 
 ## Στοιχεία επικοινωνίας
-Χρυσόστομος Συμβουλίδης, simvoul@unipi.gr
-Jean-Didier Totow, totow@unipi.gr 
+* Χρυσόστομος Συμβουλίδης, simvoul@unipi.gr
+* Jean-Didier Totow, totow@unipi.gr 
