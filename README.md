@@ -6,7 +6,23 @@
 
 ## Δομή του εργαστηρίου
 1. [Εργαστήριο 1 - Εισαγωγή Εισαγωγή στην Υπηρεσιοστρεφή Αρχιτεκτονική και τη Python](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab1)
+   * Εισαγωγή με την Υπηρεσιοστρεφή Αρχιτεκτονική (SOA) και τα Web Services
+      * SOA
+      * REST & Restful APIs
+   * Γνωριμία με τη Python 3
+      * Γενικές έννοιες
+      * Anaconda distribution
+   * Git
+      * GitΗub account
+      * Δημιουργία νέου repository
+      * Βασικές εντολές
 2. [Εργαστήριο 2 - Εισαγωγή στο Docker](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab2)
+   * Docker - Βασικές έννοιες 
+   * Πλεονεκτήματα και Μειονεκτήματα
+   * Εγκατάσταση Docker
+   * Εκτέλεση εφαρμογών 
+   * Docker containers networking
+   * Docker Hub 
 3. [Εργαστήριο 3 - MongoDB και Flask 1/2](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab3)
 4. Εργαστήριο 4 - MongoDB και Flask 2/2
 5. Εργαστήριο 5 - Containerization
@@ -25,10 +41,7 @@
     * Όπου ```python_path``` είναι το path της εγκατάστασης της Python που βρήκαμε στο βήμα 2
 
 #### Γενικές έννοιες: 
-
-* Τα αρχεία Python πρέπει να έχουν πάντα τη κατάληξη .py 
-
-    ```file_name.py```
+* Τα αρχεία Python πρέπει να έχουν πάντα τη κατάληξη .py: `file_name.py`
 
 ##### Python Virtual Environments 
 Ένα Python Virtual Environment είναι εργαλείο που βοηθάει στη διατήρηση των dependencies που 
