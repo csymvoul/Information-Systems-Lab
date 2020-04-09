@@ -48,15 +48,15 @@
 απαιτούνται από διαφορετικές εφαρμογές. 
 
 __virtualenv__
-* Πρέπει πρώτα να γίνει εγκατάσταση του virtualenv:	``pip install virtualenv``
-* Δημιουργία Virtual Environment: `virtualenv venv_name`
-* Ενεργοποίηση περιβάλλοντος:	`source path/to/venv_name activate`
-* Απενεργοποίηση περιβάλλοντος:	`deactivate` 
+  * Πρέπει πρώτα να γίνει εγκατάσταση του virtualenv:	``pip install virtualenv``
+  * Δημιουργία Virtual Environment: `virtualenv venv_name`
+  * Ενεργοποίηση περιβάλλοντος:	`source path/to/venv_name activate`
+  * Απενεργοποίηση περιβάλλοντος:	`deactivate` 
 
 __conda environment__
-* Δημιουργία Conda περιβάλλοντος: `conda create --name infosys`
-* Ενεργοποίηση περιβάλλοντος: `conda activate infosys`
-* Απενεργοποίηση περιβάλλοντος: `conda deactivate`
+  * Δημιουργία Conda περιβάλλοντος: `conda create --name infosys`
+  * Ενεργοποίηση περιβάλλοντος: `conda activate infosys`
+  * Απενεργοποίηση περιβάλλοντος: `conda deactivate`
 
 ##### Εγκατάσταση βιβλιοθηκών και πακέτων
 Πρέπει να έχετε εγκαταστήσει το ```pip```. 
