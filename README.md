@@ -5,9 +5,9 @@
 Μπορείτε να βρείτε το κώδικα από τις διαφάνειες του μαθήματος χωρισμένο σε διαφορετικούς φακέλους. 
 
 ## Δομή του εργαστηρίου
-1. (Εργαστήριο 1 - Εισαγωγή Εισαγωγή στην Υπηρεσιοστρεφή Αρχιτεκτονική και τη Python)[https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab1]
-2. Εργαστήριο 2 - Εισαγωγή στο Docker 
-3. Εργαστήριο 3 - MongoDB και Flask 1/2
+1. [Εργαστήριο 1 - Εισαγωγή Εισαγωγή στην Υπηρεσιοστρεφή Αρχιτεκτονική και τη Python](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab1)
+2. [Εργαστήριο 2 - Εισαγωγή στο Docker](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab2)
+3. [Εργαστήριο 3 - MongoDB και Flask 1/2](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab3)
 4. Εργαστήριο 4 - MongoDB και Flask 2/2
 5. Εργαστήριο 5 - Containerization
 
