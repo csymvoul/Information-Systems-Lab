@@ -11,3 +11,6 @@
 4. Εργαστήριο 4 - MongoDB και Flask 2/2
 5. Εργαστήριο 5 - Containerization
 
+## Στοιχεία επικοινωνίας
+Χρυσόστομος Συμβουλίδης, simvoul@unipi.gr
+Jean-Didier Totow, totow@unipi.gr 
