@@ -106,14 +106,8 @@ __Εγκατάσταση στα Linux (Ubuntu)__:
 
 #### Βασικές εντολές Docker
 
-* Προβολή λίστας με όλα τα images που έχουμε τοπικά στον υπολογιστή μας: 
-
-`docker images`
-
-* Εμφάνιση λίστας με όλα τα container που έχουμε στον υπολογιστή μας:
-
-`docker ps -a`
-
+* Προβολή λίστας με όλα τα images που έχουμε τοπικά στον υπολογιστή μας: `docker images`
+* Εμφάνιση λίστας με όλα τα container που έχουμε στον υπολογιστή μας: `docker ps -a`
 * Δημιουργία και εκτέλεση container (Αν δεν υπάρχει ήδη τοπικά στον υπολογιστή, γίνει και κατέβασμα): `docker run image_name --name friendly_name -p HOST_PORT:DOCKER_PORT`
 * Εκτέλεση εντολών μέσα σε ένα container: `docker exec friendly_name`
 * Παύση ενός container: `docker stop friendly_name`
@@ -121,7 +115,6 @@ __Εγκατάσταση στα Linux (Ubuntu)__:
 * Διαγραφή ενός image από τον υπολογιστή (αφού πρώτα έχει διαγραφεί το container που το χρησιμοποιεί): `docker rmi image_name`
 * Εμφάνιση low-level πληροφοριών για ένα container: `docker inspect friendly_name`
 * Εμφάνιση log για ένα container: `docker log friendly_name`
-
 
 #### Δημιουργία Dockerfile
 _Προσοχή: Το Dockerfile δεν έχει κάποιο extension!_
