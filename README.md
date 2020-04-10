@@ -118,8 +118,14 @@ __Εγκατάσταση στα Linux (Ubuntu)__:
 
 #### Δημιουργία Dockerfile
 _Προσοχή: Το Dockerfile δεν έχει κάποιο extension!_
+
 __Linux__: 
 * Για να το δημιουργήσουμε πρέπει να εκτελέσουμε τη παρακάτω εντολή στο terminal: `touch Dockerfile`
+
+__Windows__:
+* Δημιουργούμε ένα κενό txt αρχείο (πχ στο Notepad) και το αποθηκεύουμε χωρίς extension: 
+    * File / Save as / Dockerfile 
+    * Και επιλέγουμε Save as type: All Files (*.*)
 
 __Βασικές εντολές που θα χρησιμοποιήσουμε σε ένα Dockerfile__:
 * Σε τι λειτουργικό σύστημα θα τρέχει (πάντα το βάζουμε στη πρώτη γραμμή): `FROM ubuntu:16.04` 
