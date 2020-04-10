@@ -108,7 +108,7 @@ __Εγκατάσταση στα Linux (Ubuntu)__:
 
 * Προβολή λίστας με όλα τα images που έχουμε τοπικά στον υπολογιστή μας: `docker images`
 * Εμφάνιση λίστας με όλα τα container που έχουμε στον υπολογιστή μας: `docker ps -a`
-* Δημιουργία και εκτέλεση container (Αν δεν υπάρχει ήδη τοπικά στον υπολογιστή, γίνει και κατέβασμα): `docker run image_name --name friendly_name -p HOST_PORT:DOCKER_PORT`
+* Δημιουργία και εκτέλεση container (Αν δεν υπάρχει ήδη τοπικά στον υπολογιστή, θα γίνει και κατέβασμα): `docker run image_name --name friendly_name -p HOST_PORT:DOCKER_PORT`
 * Εκτέλεση εντολών μέσα σε ένα container: `docker exec friendly_name`
 * Παύση ενός container: `docker stop friendly_name`
 * Αφαίρεση ενός σταματημένου container: `docker rm friendly_name` 
