@@ -124,7 +124,7 @@ __Linux__:
 
 __Windows__:
 * Δημιουργούμε ένα κενό txt αρχείο (πχ στο Notepad) και το αποθηκεύουμε χωρίς extension: 
-    * File / Save as / Dockerfile 
+    * File / Save as / File name: Dockerfile 
     * Και επιλέγουμε Save as type: All Files (\*.\*)
 
 __Βασικές εντολές που θα χρησιμοποιήσουμε σε ένα Dockerfile__:
