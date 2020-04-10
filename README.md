@@ -27,7 +27,7 @@
 4. Εργαστήριο 4 - MongoDB και Flask 2/2
 5. Εργαστήριο 5 - Containerization
 
-### Python 3
+## Python 3
 Προτείνεται η χρήση της διανομής Anaconda. Παρακάτω μπορείτε να βρείτε και τα link για να κατεβάσετε τη Python: 
 * Python 3: https://www.python.org/downloads/
 * Anaconda: https://www.anaconda.com/distribution/
@@ -78,7 +78,7 @@ _Αν θέλουμε να κάνουμε εγκατάσταση ένα package �
   * `pip install -r  > requirements.txt` 
   * _Μόνο για χρήστες Anaconda_: `conda install --file requirements.txt`
 
-### Docker 
+## Docker 
 
 #### Εγκατάσταση Docker 
 ##### Απαιτήσεις συστήματος: 
