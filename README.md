@@ -27,7 +27,7 @@
 4. Εργαστήριο 4 - MongoDB και Flask 2/2
 5. Εργαστήριο 5 - Containerization
 
-### Εγκατάσταση Python 3
+### Python 3
 Προτείνεται η χρήση της διανομής Anaconda. Παρακάτω μπορείτε να βρείτε και τα link για να κατεβάσετε τη Python: 
 * Python 3: https://www.python.org/downloads/
 * Anaconda: https://www.anaconda.com/distribution/
@@ -77,6 +77,66 @@ _Αν θέλουμε να κάνουμε εγκατάσταση ένα package �
 * Για νά κάνουμε εγκατάσταση τα requirement από ένα αρχείο χρησιμοποιούμε την εντολή: 
   * `pip install -r  > requirements.txt` 
   * _Μόνο για χρήστες Anaconda_: `conda install --file requirements.txt`
+
+### Docker 
+
+#### Εγκατάσταση Docker 
+##### Απαιτήσεις συστήματος: 
+__Hardware__:
+* 64-bit processor με Second Level Address Translation (SLAT)
+* 4GB system RAM
+* BIOS-level hardware virtualization support πρέπει να είναι ενεργοποιημένο στις ρυθμίσεις του BIOS (συνήθως είναι ήδη activated)
+
+__Εγκατάσταση στα Windows__: 
+* Πρέπει να έχετε Windows 10 Pro, Windows 10 Student edition - Σε Windows Home δεν θα μπορέσει να γίνει εγκατάσταση σωστά
+* Πρέπει επίσης να είναι ενεργοποιημένα τα: 
+  * Hyper-V 
+  * Containers Windows Features
+* Κατεβάζετε το εκτελέσιμο αρχείο από εδώ: https://hub.docker.com/editions/community/docker-ce-desktop-wind
+ows
+
+__Εγκατάσταση στα Linux (Ubuntu)__:
+* Αρκεί να εκτελέσετε τις παρακάτω εντολές στο terminal: 
+  * `sudo apt-get update`
+  * `sudo apt install -y apt-transport-https ca-certificates curl software-properties-common`
+  * `curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -`
+  * `sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`
+  * `sudo apt-get update`
+  * `sudo apt install docker-ce`
+
+#### Βασικές εντολές Docker
+
+* Προβολή λίστας με όλα τα images που έχουμε τοπικά στον υπολογιστή μας: 
+
+`docker images`
+
+* Εμφάνιση λίστας με όλα τα container που έχουμε στον υπολογιστή μας:
+
+`docker ps -a`
+
+* Δημιουργία και εκτέλεση container (Αν δεν υπάρχει ήδη τοπικά στον υπολογιστή, γίνει και κατέβασμα): `docker run image_name --name friendly_name -p HOST_PORT:DOCKER_PORT`
+* Εκτέλεση εντολών μέσα σε ένα container: `docker exec friendly_name`
+* Παύση ενός container: `docker stop friendly_name`
+* Αφαίρεση ενός σταματημένου container: `docker rm friendly_name` 
+* Διαγραφή ενός image από τον υπολογιστή (αφού πρώτα έχει διαγραφεί το container που το χρησιμοποιεί): `docker rmi image_name`
+* Εμφάνιση low-level πληροφοριών για ένα container: `docker inspect friendly_name`
+* Εμφάνιση log για ένα container: `docker log friendly_name`
+
+
+#### Δημιουργία Dockerfile
+_Προσοχή: Το Dockerfile δεν έχει κάποιο extension!_
+__Linux__: 
+* Για να το δημιουργήσουμε πρέπει να εκτελέσουμε τη παρακάτω εντολή στο terminal: `touch Dockerfile`
+
+__Βασικές εντολές που θα χρησιμοποιήσουμε σε ένα Dockerfile__:
+* Σε τι λειτουργικό σύστημα θα τρέχει (πάντα το βάζουμε στη πρώτη γραμμή): `FROM ubuntu:16.04` 
+* Όνομα και email του maintainer του image: `MAINTAINER name <email@address.domain>`
+* Αντιγραφή αρχείων από τον host στο container: `COPY filename /dir/to/docker/container`
+* Προεπιλογές για την εκτέλεση ενός container: `CMD command`
+* Εκτέλεση εντολών μέσα στο container: `RUN command`
+* Ποιες port κάνει expose το container: `EXPOSE 80/tcp`
+* Κάνουμε set τον χρήστη: `USER username`
+* Τρέχει όταν ξεκινήσει το container: `ENTRYPOINT [“executable”,”param1”,”param2”]` 
 
 ## Στοιχεία επικοινωνίας
 * Χρυσόστομος Συμβουλίδης, simvoul@unipi.gr
