@@ -115,6 +115,9 @@ __Εγκατάσταση στα Linux (Ubuntu)__:
 * Διαγραφή ενός image από τον υπολογιστή (αφού πρώτα έχει διαγραφεί το container που το χρησιμοποιεί): `docker rmi image_name`
 * Εμφάνιση low-level πληροφοριών για ένα container: `docker inspect friendly_name`
 * Εμφάνιση log για ένα container: `docker log friendly_name`
+* Build από Dockerfile: `docker built -t image_name .`
+  * `.` στο τέλος βάζουμε αν το Dockerfile είναι στο ίδιο μέρος με το path που έχουμε στο terminal. 
+  * Ενναλακτικά, αντικαθιστούμε το `.` με το path για το Dockerfile
 
 #### Δημιουργία Dockerfile
 _Προσοχή: Το Dockerfile δεν έχει κάποιο extension!_
