@@ -131,7 +131,7 @@ __Windows__:
     * Και επιλέγουμε Save as type: All Files (\*.\*)
 
 __Βασικές εντολές που θα χρησιμοποιήσουμε σε ένα Dockerfile__:
-* Ποια είναι η base image που χρησιμοποιείται (πρέπει __πάντα να υπάρχει σε ένα Dockerfile__ και να το βάζουμε στη πρώτη γραμμή): `FROM ubuntu:16.04` 
+* Ποια είναι η base image που χρησιμοποιείται (πρέπει __πάντα να υπάρχει σε ένα Dockerfile__ και το βάζουμε στη __πρώτη γραμμή__): `__FROM__ ubuntu:16.04` 
 * Όνομα και email του maintainer του image: `MAINTAINER name <email@address.domain>`
 * Αντιγραφή αρχείων από τον host στο container: `COPY filename /dir/to/docker/container`
 * Προεπιλογές για την εκτέλεση ενός container: `CMD command`
