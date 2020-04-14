@@ -54,8 +54,8 @@ __virtualenv__
   * Απενεργοποίηση περιβάλλοντος:	`deactivate` 
 
 __conda environment__
-  * Δημιουργία Conda περιβάλλοντος: `conda create --name infosys`
-  * Ενεργοποίηση περιβάλλοντος: `conda activate infosys`
+  * Δημιουργία Conda περιβάλλοντος: `conda create --name conda_env`
+  * Ενεργοποίηση περιβάλλοντος: `conda activate conda_env`
   * Απενεργοποίηση περιβάλλοντος: `conda deactivate`
 
 ##### Εγκατάσταση βιβλιοθηκών και πακέτων
