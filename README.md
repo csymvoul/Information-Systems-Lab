@@ -80,7 +80,7 @@ _Αν θέλουμε να κάνουμε εγκατάσταση ένα package �
   * `pip freeze > requirements.txt` 
   * _Μόνο για χρήστες Anaconda_: `conda list --export > requirements.txt`
 * Για νά κάνουμε εγκατάσταση τα requirement από ένα αρχείο χρησιμοποιούμε την εντολή: 
-  * `pip install -r  > requirements.txt` 
+  * `pip install -r requirements.txt` 
   * _Μόνο για χρήστες Anaconda_: `conda install --file requirements.txt`
 
 ## Docker 
