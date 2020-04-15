@@ -62,7 +62,12 @@ __conda environment__
 Πρέπει να έχετε εγκαταστήσει το ```pip```. 
 * Mπορείτε να εγκαταστήσετε και να χρησιμοποιήσετε βιβλιοθήκες απλά εκτελώντας την εντολή:
   * ```pip install packagename```
-  * _Μόνο για χρήστες Anaconda:_ ```conda install packagename```
+  * _Μόνο για χρήστες Anaconda_: 
+    * ```conda install packagename```
+    * __Σημείωση: Δεν είναι όλα τα packages διαθέσιμα στο conda!__
+    * Αν θέλουμε να κάνουμε εγκατάσταση κάτι μέσω `pip` Anacona Virtual Environment μας: 
+      * ```conda install pip```
+      * ```pip install packagename```
 
 Όταν τις κάνουμε εγκατάσταση σε κάποιο περιβάλλον, μπορούμε να τις εισάγουμε σε κάποιο πρόγραμμά μας έτσι: 
 ```import package_name```
