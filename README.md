@@ -65,9 +65,9 @@ __conda environment__
   * _Μόνο για χρήστες Anaconda_: 
     * ```conda install packagename```
     * __Σημείωση: Δεν είναι όλα τα packages διαθέσιμα στο conda!__
-    * Αν θέλουμε να κάνουμε εγκατάσταση κάτι μέσω `pip` Anacona Virtual Environment μας: 
-      * ```conda install pip```
-      * ```pip install packagename```
+    * Αν θέλουμε να κάνουμε εγκατάσταση κάτι μέσω `pip` Anacona Virtual Environment μας __πρώτα κάνουμε εγκατάσταση το pip__ στο environment και μετά κατεβάζουμε τα packages που θέλουμε: 
+      1. ```conda install pip```
+      2. ```pip install packagename```
 
 Όταν τις κάνουμε εγκατάσταση σε κάποιο περιβάλλον, μπορούμε να τις εισάγουμε σε κάποιο πρόγραμμά μας έτσι: 
 ```import package_name```
