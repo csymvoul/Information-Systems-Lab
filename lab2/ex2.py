@@ -14,8 +14,6 @@ def main():
         print(e)
         return None 
     
-
-
 if __name__=="__main__":
     print("Weather requester started ...")
     while True:
