@@ -47,6 +47,12 @@ def get_all_students():
         output.append(student)
     return jsonify(output)
 
+# Get the number of all the students in the DB 
+@app.route('/getstudentcount', methods=['GET'])
+def get_students_count():
+    number_of_students = students.find({}).count()
+    return jsonify({"Number of students": number_of_students})
+
 # Find student by email
 @app.route('/getstudent/<string:email>', methods=['GET'])
 def get_student_by_email(email):
@@ -57,7 +63,6 @@ def get_student_by_email(email):
         student = {'_id':str(student["_id"]),'name':student["name"],'email':student["email"], 'yearOfBirth':student["yearOfBirth"]}
         return jsonify(student)
     return Response('no student found',status=500,mimetype='application/json')
-    # return jsonify({"student":student})
 
 # Run Flask App
 if __name__ == '__main__':
