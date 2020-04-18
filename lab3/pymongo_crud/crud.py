@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 import json
-from pprint import pprint
 
 # Connect to our local MongoDB
 client = MongoClient('mongodb://localhost:27017/')
