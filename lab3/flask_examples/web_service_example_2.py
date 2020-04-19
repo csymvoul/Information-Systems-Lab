@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/getInfo", methods=['GET', 'POST'])
 def get_info():
     if request.method =='GET':
-        return {'response': 201, 'method': 'GET'}
+        return {'response': 200, 'method': 'GET'}
     elif request.method == 'POST':
         data = json.loads(request.data)
         data['method']= 'POST'
