@@ -1,13 +1,17 @@
-from flask import Flask
-from flask import request
+from flask import Flask, request
 import json
 
 app = Flask(__name__)
 
-@app.route("/getInfo")
+@app.route("/getInfo", methods=['GET', 'POST'])
 def get_info():
-    data = json.loads(request.data)
-    return data
+    if request.method =='GET':
+        return {'response': 201, 'method': 'GET'}
+    elif request.method == 'POST':
+        data = json.loads(request.data)
+        data['method']= 'POST'
+        data['response']=201
+        return data
 
 if __name__ == '__main__':
     app.run(debug=True) 
