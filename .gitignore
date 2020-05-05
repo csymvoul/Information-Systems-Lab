@@ -1,6 +1,6 @@
 /lab1/solutions
 /lab1/dicts/exercise
 /lab3/__pycache__
-/.vscode
+*/.vscode
 /lab2/ex2
 /lab3/exercise
