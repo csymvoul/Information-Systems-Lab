@@ -69,5 +69,5 @@ def delete_student():
 # insert_student()
 # update_student()
 # get_all_students()
-# find_student(name="Chrysostomos Symvoulidis")
-delete_student()
+find_student(name="Chrysostomos Symvoulidis")
+# delete_student()
