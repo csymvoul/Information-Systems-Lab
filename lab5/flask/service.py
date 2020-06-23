@@ -1,11 +1,12 @@
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
 from flask import Flask, request, jsonify, redirect, Response
-import json, os, sys 
+import json, os, sys
 sys.path.append('./data')
 import prepare_data 
 
 # Connect to our local MongoDB
+
 mongodb_hostname = os.environ.get("MONGO_HOSTNAME","localhost")
 client = MongoClient('mongodb://'+mongodb_hostname+':27017/')
 

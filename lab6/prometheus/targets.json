@@ -1,0 +1,122 @@
+[
+  {
+    "Targets": [
+      "10.0.2.29:55671",
+      "10.0.2.29:55683"
+    ],
+    "Labels": {
+      "job": "lab6_manager",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.17:55673"
+    ],
+    "Labels": {
+      "job": "lab6_ingestor",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.1.10:80"
+    ],
+    "Labels": {
+      "job": "lab6_proxy",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.25:3000"
+    ],
+    "Labels": {
+      "job": "lab6_grafana",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.50"
+    ],
+    "Labels": {
+      "job": "lab6_pdp",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.49:9091"
+    ],
+    "Labels": {
+      "job": "lab6_pushgateway",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.51"
+    ],
+    "Labels": {
+      "job": "lab6_ml",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.39:9090"
+    ],
+    "Labels": {
+      "job": "lab6_prometheus",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.54:8090"
+    ],
+    "Labels": {
+      "job": "lab6_slalite",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.1.6"
+    ],
+    "Labels": {
+      "job": "lab6_swarm-listener",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.47:15672",
+      "10.0.2.47:5671",
+      "10.0.2.47:5672"
+    ],
+    "Labels": {
+      "job": "lab6_rabbitmq",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.35:8080"
+    ],
+    "Labels": {
+      "job": "lab6_visualizer",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  },
+  {
+    "Targets": [
+      "10.0.2.53:27017"
+    ],
+    "Labels": {
+      "job": "lab6_mongodb",
+      "nodeID": "tfr9sknmfc58yop98ti09dofe"
+    }
+  }
+]

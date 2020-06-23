@@ -7,5 +7,6 @@ RUN mkdir /app
 RUN mkdir -p /app/data
 COPY service.py /app/service.py  
 ADD data /app/data 
+EXPOSE 5000
 WORKDIR /app
 ENTRYPOINT [ "python3","-u", "service.py" ]
