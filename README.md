@@ -24,8 +24,9 @@
    * Docker containers networking
    * Docker Hub 
 3. [Εργαστήριο 3 - MongoDB και Flask 1/2](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab3)
-4. Εργαστήριο 4 - MongoDB και Flask 2/2
-5. Εργαστήριο 5 - Containerization
+4. [Εργαστήριο 4 - MongoDB και Flask 2/2](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab4)
+5. [Εργαστήριο 5 - Containerization](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab5)
+6. [Extra Εργαστήριο - Scaling στο Docker](https://github.com/csymvoul/Information-Systems-Lab/tree/master/lab6)
 
 ## Python 3
 Προτείνεται η χρήση της διανομής Anaconda. Παρακάτω μπορείτε να βρείτε και τα link για να κατεβάσετε τη Python: 
