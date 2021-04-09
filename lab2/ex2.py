@@ -5,6 +5,7 @@ state = "Attiki"
 country = "gr"
 key = "dcff3a1b197264b4ba1fb5fe20a6ca4b"
 url = "https://api.openweathermap.org/data/2.5/weather?q="+city+","+state+","+country+"&appid="+key
+
 def main():
     headers = {"Content-Type":"application/json"}
     try:
