@@ -7,15 +7,12 @@ services:
     ports:
     - 27017:27017
     volumes:
-    - ./mongodb/data:/data/db 
+    - /home/user/mongodb/data:/data/db 
   flask-service:
-    build:
-      context: ./flask 
+    image: my_flash_image
     restart: always 
-    container_name: flask 
-    depends_on: 
-      - mongodb
+    container_name: flash 
+    depends_on: mongodb
     ports:
-      - 5000:5000
-    environment: 
-      - "MONGO_HOSTNAME=mongodb"
+    - 5000:5000
+    

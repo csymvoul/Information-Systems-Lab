@@ -1,86 +1,21 @@
-version: '3'
+version: '2'
 services:
   mongodb:
     image: mongo
     restart: always
+    container_name: mongodb 
     ports:
     - 27017:27017
-  prometheus:
-    image: prom/prometheus 
-    hostname: prometheus 
-    ports:
-    - 9090:9090 
     volumes:
-    - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml 
-    - ./prometheus/targets.json:/etc/prometheus/targets.json 
-  swarm-discover:
-    image: seqvence/prometheus-swarm
-    command: ["-i", "5", "-o", "/swarm-endpoints/targets.json", "-p" , "lab6_prometheus"]
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./prometheus/targets.json:/swarm-endpoints/targets.json 
-    labels:
-        prometheus.ignore: "true"
-    deploy:
-      placement:
-        constraints:
-          - node.role == manager
-  proxy:
-    image: dockerflow/docker-flow-proxy
-    ports:
-      - 8082:80
-    #  - 443:443
-    networks:
-      - proxy
-    environment:
-      - LISTENER_ADDRESS=swarm-listener
-      - MODE=swarm
-    deploy:
-      replicas: 1
-
-  swarm-listener:
-    image: dockerflow/docker-flow-swarm-listener
-    networks:
-      - proxy
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - DF_NOTIFY_CREATE_SERVICE_URL=http://proxy:8080/v1/docker-flow-proxy/reconfigure
-      - DF_NOTIFY_REMOVE_SERVICE_URL=http://proxy:8080/v1/docker-flow-proxy/remove
-    deploy:
-      placement:
-        constraints: [node.role == manager]
-
-  grafana:
-    image: grafana/grafana 
+    - ./mongodb/data:/data/db 
+  flask-service:
+    build:
+      context: ./flask 
     restart: always 
+    container_name: flask 
+    depends_on: 
+      - mongodb
     ports:
-    - 3000:3000
- 
-  rabbitmq:
-    image: jdtotow/rabbitmq
-    hostname: rabbitmq
-    ports:
-      - 5672:5672
-      - 5671:5671
-      - 15672:15672
-  visualizer:
-    image: jdtotow/visualizer
-    volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-    - 8080:8080
-    deploy:
-      placement:
-        constraints:
-          - "node.role==manager"
-  flask:
-    image: jdtotow/flask
-    ports:
-    - 5000:5000
+      - 5000:5000
     environment: 
-    - "MONGO_HOSTNAME=mongodb"
-
-networks: 
-  proxy:
-    driver: "overlay"
+      - "MONGO_HOSTNAME=mongodb"
