@@ -10,7 +10,7 @@ class Collector(object):
         self._metrics = metrics
 
     def _set_labels(self):
-        self._labels.update({'application': self._service[0],'replicas': self._service[1]})
+        self._labels.update({'application': self._service[0],'type': self._service[1]})
 
     def _get_metrics(self):
         #time.sleep(random.uniform(0.1, 0.4))
