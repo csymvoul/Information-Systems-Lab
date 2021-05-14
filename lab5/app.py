@@ -1,14 +1,10 @@
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
 from flask import Flask, request, jsonify, redirect, Response
-import json, os, sys
-sys.path.append('./data')
-import prepare_data 
+import json
 
 # Connect to our local MongoDB
-
-mongodb_hostname = os.environ.get("MONGO_HOSTNAME","localhost")
-client = MongoClient('mongodb://'+mongodb_hostname+':27017/')
+client = MongoClient('mongodb://localhost:27017/')
 
 # Choose InfoSys database
 db = client['InfoSys']
@@ -16,17 +12,7 @@ students = db['Students']
 
 # Initiate Flask App
 app = Flask(__name__)
-import logging
-log = logging.getLogger('werkzeug')
-log.setLevel(logging.INFO)
-#check if data existence
-def check_data():
-    try:
-        if students.find({}).count() == 0:
-            prepare_data.insert_all()
-    except Exception as e:
-        print(e)
-        raise e
+
 # Insert Student
 # Create Operation
 @app.route('/insertstudent', methods=['POST'])
@@ -136,5 +122,4 @@ def delete_student(email):
 
 # Run Flask App
 if __name__ == '__main__':
-    check_data()
     app.run(debug=True, host='0.0.0.0', port=5000)

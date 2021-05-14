@@ -9,7 +9,8 @@ client = MongoClient('mongodb://localhost:27017/')
 # Choose InfoSys database
 db = client['InfoSys']
 students = db['Students']
-
+testing = db['Test-Collection']
+testing.insert_one({'student': '123123'})
 # Initiate Flask App
 app = Flask(__name__)
 
